@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Outift";
+  src: url("../assets/fonts/Outfit-Regular.woff2") format("woff2");
+  font-weight: var(--font-weight-regular);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outift";
+  src: url("../assets/fonts/Outfit-Bold.woff2") format("woff2");
+  font-weight: var(--font-weight-bold);
+  font-display: swap;
+}
