@@ -1,51 +1,58 @@
 :root {
-  --color-neutral-100: oklch(96.74% 0 287.3deg);
-  --color-red-100: oklch(93.65% 0.03 17.79deg);
-  --color-neutral-200: oklch(91.97% 0 286.61deg);
-  --color-red-200: oklch(88.34% 0.06 18.41deg);
-  --color-neutral-300: oklch(87.11% 0.01 286.49deg);
-  --color-neutral-400: oklch(70.57% 0.01 286.09deg);
-  --color-red-300: oklch(80.54% 0.11 19.79deg);
-  --color-neutral-500: oklch(55.2% 0.02 285.93deg);
-  --color-red-400: oklch(70.22% 0.19 22.23deg);
-  --color-neutral-600: oklch(44.22% 0.02 285.75deg);
-  --color-red-500: oklch(63.79% 0.24 25.44deg);
-  --color-neutral-700: oklch(37.03% 0.01 285.84deg);
-  --color-red-600: oklch(58.31% 0.24 28.48deg);
-  --color-red-700: oklch(50.95% 0.21 28.51deg);
-  --color-red-800: oklch(44.46% 0.18 26.79deg);
-  --color-red-900: oklch(39.67% 0.14 25.72deg);
-  --color-green-100: oklch(94.98% 0.05 163.59deg);
-  --color-green-200: oklch(90.53% 0.09 163.85deg);
-  --color-green-300: oklch(84.41% 0.14 165.22deg);
-  --color-green-400: oklch(76.88% 0.17 161.94deg);
-  --color-green-500: oklch(70.19% 0.16 160.43deg);
-  --color-green-600: oklch(60.31% 0.13 160.92deg);
-  --color-green-700: oklch(51.28% 0.11 163.56deg);
-  --color-green-800: oklch(43.36% 0.09 165.86deg);
-  --color-green-900: oklch(38% 0.08 168.7deg);
-  --color-yellow-100: oklch(96.17% 0.06 95.87deg);
-  --color-yellow-200: oklch(92.44% 0.12 95.84deg);
-  --color-yellow-300: oklch(87.81% 0.17 91.85deg);
-  --color-yellow-400: oklch(82.9% 0.17 81.03deg);
-  --color-yellow-500: oklch(77.24% 0.17 65.36deg);
-  --color-yellow-600: oklch(66.72% 0.17 53.38deg);
-  --color-yellow-700: oklch(55.71% 0.16 45.36deg);
-  --color-yellow-800: oklch(47.3% 0.13 45.22deg);
-  --color-yellow-900: oklch(41.32% 0.11 46.19deg);
-  --color-blue-100: oklch(93.19% 0.03 255.58deg);
-  --color-blue-200: oklch(88.2% 0.06 253.97deg);
-  --color-blue-300: oklch(80.71% 0.1 250.44deg);
-  --color-blue-400: oklch(70.36% 0.16 253.41deg);
-  --color-blue-500: oklch(61.87% 0.21 259.23deg);
-  --color-blue-600: oklch(54.65% 0.25 262.87deg);
-  --color-blue-700: oklch(48.78% 0.24 264.4deg);
-  --color-blue-800: oklch(42.42% 0.2 265.5deg);
-  --color-blue-900: oklch(37.96% 0.15 265.47deg);
-  --color-neutral-800: oklch(27.39% 0.01 286.1deg);
-  --color-neutral-900: oklch(21.03% 0.01 285.93deg);
-  --color-white: oklch(96.74% 0 287.3deg);
-  --color-black: oklch(21.03% 0.01 285.93deg);
+  --color-neutral-100: #f4f4f4;
+  --color-neutral-200: #e4e4e4;
+  --color-neutral-300: #d4d4db;
+  --color-neutral-400: #9f9fa6;
+  --color-neutral-500: #71717e;
+  --color-neutral-600: #52525e;
+  --color-neutral-700: #3f3f45;
+  --color-neutral-800: #27272c;
+  --color-neutral-900: #18181d;
+
+  --color-red-100: #fee3e2;
+  --color-red-200: #fec9c9;
+  --color-red-300: #ffa2a2;
+  --color-red-400: #ff6467;
+  --color-red-500: #fc2935;
+  --color-red-600: #e80009;
+  --color-red-700: #c20005;
+  --color-red-800: #a00210;
+  --color-red-900: #82191a;
+
+  --color-green-100: #d1fae5;
+  --color-green-200: #a7f3d0;
+  --color-green-300: #61e9b5;
+  --color-green-400: #00d492;
+  --color-green-500: #00bc7c;
+  --color-green-600: #149867;
+  --color-green-700: #007a55;
+  --color-green-800: #006045;
+  --color-green-900: #00503b;
+
+  --color-yellow-100: #fef3c5;
+  --color-yellow-200: #fee685;
+  --color-yellow-300: #ffd22d;
+  --color-yellow-400: #ffb909;
+  --color-yellow-500: #fd9b10;
+  --color-yellow-600: #e27100;
+  --color-yellow-700: #bc4c00;
+  --color-yellow-800: #943e08;
+  --color-yellow-900: #793308;
+
+  --color-blue-100: #dceafd;
+  --color-blue-200: #bddbff;
+  --color-blue-300: #8ec5ff;
+  --color-blue-400: #4fa2ff;
+  --color-blue-500: #297fff;
+  --color-blue-600: #125cfe;
+  --color-blue-700: #1548e4;
+  --color-blue-800: #193cb9;
+  --color-blue-900: #1b3890;
+
+  --color-white: #f4f4f4;
+  --color-black: #18181d;
+
+  /* Semantic tokens */
   --color-background: var(--color-neutral-100);
   --color-border: var(--color-neutral-400);
   --color-content: var(--color-neutral-900);
@@ -68,14 +75,18 @@
   --color-background-pressed: var(--color-neutral-300);
   --color-background-accent-hover: var(--color-blue-700);
   --color-background-accent-pressed: var(--color-blue-800);
+
+  /* Typography */
   --font-size-100: 0.875rem;
-  --font-weight-regular: 400;
-  --font-weight-bold: 700;
   --font-size-200: 1rem;
   --font-size-300: 1.25rem;
   --font-size-400: 1.5rem;
   --font-size-500: 2rem;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
   --font-family: Outfit, sans-serif;
+
+  /* Spacing */
   --space-100: 0.25rem;
   --space-200: 0.5rem;
   --space-300: 0.75rem;
@@ -85,9 +96,13 @@
   --space-700: 3rem;
   --space-800: 4rem;
   --space-900: 6rem;
+
+  /* Sizing */
   --size-small: 1.75rem;
   --size-medium: 2.25rem;
   --size-large: 2.75rem;
+
+  /* Radius */
   --radius-small: 4px;
   --radius-medium: 8px;
   --radius-large: 16px;
