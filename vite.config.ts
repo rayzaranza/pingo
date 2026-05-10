@@ -2,23 +2,39 @@
 import { defineConfig } from "vite";
 import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import babel from "@rolldown/plugin-babel";
-import path from "path";
-import { fileURLToPath } from "node:url";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import { playwright } from "@vitest/browser-playwright";
-const dirname =
-  typeof __dirname !== "undefined"
-    ? __dirname
-    : path.dirname(fileURLToPath(import.meta.url));
+import { resolve } from "node:path";
+import dts from "unplugin-dts/vite";
 
 export default defineConfig({
+  build: {
+    lib: {
+      entry: "src/main.ts",
+      name: "Pingo",
+      fileName: "pingo",
+      formats: ["es"],
+    },
+    rolldownOptions: {
+      external: [
+        "react",
+        "react-dom",
+        "react/jsx-runtime",
+        "react/compiler-runtime",
+      ],
+    },
+  },
   resolve: {
     alias: {
-      "@": path.resolve(dirname, "./src"),
+      "@": resolve(import.meta.dirname, "src"),
     },
   },
   plugins: [
     react(),
+    dts({
+      bundleTypes: true,
+      tsconfigPath: "./tsconfig.app.json",
+    }),
     babel({
       presets: [reactCompilerPreset()],
     }),
@@ -29,7 +45,7 @@ export default defineConfig({
         extends: true,
         plugins: [
           storybookTest({
-            configDir: path.join(dirname, ".storybook"),
+            configDir: resolve(import.meta.dirname, ".storybook"),
           }),
         ],
         test: {
