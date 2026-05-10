@@ -5,22 +5,23 @@ import babel from "@rolldown/plugin-babel";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import { playwright } from "@vitest/browser-playwright";
 import { resolve } from "node:path";
+import dts from "unplugin-dts/vite";
 
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(import.meta.dirname, "src/main.ts"),
+      entry: "src/main.ts",
       name: "Pingo",
       fileName: "pingo",
+      formats: ["es"],
     },
     rolldownOptions: {
-      external: ["react", "react-dom"],
-      output: {
-        globals: {
-          react: "React",
-          "react-dom": "reactDOM",
-        },
-      },
+      external: [
+        "react",
+        "react-dom",
+        "react/jsx-runtime",
+        "react/compiler-runtime",
+      ],
     },
   },
   resolve: {
@@ -30,6 +31,10 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    dts({
+      bundleTypes: true,
+      tsconfigPath: "./tsconfig.app.json",
+    }),
     babel({
       presets: [reactCompilerPreset()],
     }),
