@@ -18,7 +18,6 @@
     "dev": "storybook dev -p 6006  --no-open --disable-telemetry",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
     "build-storybook": "storybook build"
   },
   "dependencies": {
