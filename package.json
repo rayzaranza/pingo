@@ -1,8 +1,21 @@
 {
   "name": "pingo",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "description": "A UI library made with React that provide design tokens, components and icons.",
+  "version": "0.0.1",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/pingo.umd.cjs",
+  "module": "./dist/pingo.js",
+  "exports": {
+    ".": {
+      "import": "./dist/pingo.umd.js",
+      "require": "./dist/pingo.cjs"
+    },
+    "./styles": "./dist/pingo.css"
+  },
   "scripts": {
     "dev": "storybook dev -p 6006  --no-open --disable-telemetry",
     "build": "tsc -b && vite build",
