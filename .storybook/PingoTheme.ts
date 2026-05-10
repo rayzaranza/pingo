@@ -7,6 +7,7 @@ export default create({
   base: "light",
   brandTitle: "<h1><b>Pingo</b></h1>",
   fontBase: fontFamily,
+  fontCode: "Fira Code",
   appBg: bg,
   appPreviewBg: bg,
   appContentBg: bg,
