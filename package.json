@@ -2,7 +2,7 @@
   "name": "pingo-ui",
   "private": false,
   "description": "A UI library made with React that provide design tokens, components and icons.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "files": [
     "dist"
