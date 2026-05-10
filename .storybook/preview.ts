@@ -1,20 +1,31 @@
-import type { Preview } from '@storybook/react-vite'
+import type { Preview } from "@storybook/react-vite";
+import PingoTheme from "./PingoTheme";
+import "../src/styles/main.css";
 
 const preview: Preview = {
   parameters: {
     controls: {
       matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+        color: /(background|color)$/i,
+        date: /Date$/i,
       },
     },
-
+    layout: "centered",
+    backgrounds: {
+      options: {
+        light: { name: "Light", value: "var(--color-background)" },
+      },
+    },
     a11y: {
-      // 'todo' - show a11y violations in the test UI only
-      // 'error' - fail CI on a11y violations
-      // 'off' - skip a11y checks entirely
-      test: 'todo'
-    }
+      test: "error",
+    },
+    docs: {
+      theme: PingoTheme,
+    },
+  },
+  tags: ["autodocs"],
+  initialGlobals: {
+    backgrounds: { value: "light" },
   },
 };
 
