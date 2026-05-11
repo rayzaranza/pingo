@@ -17,6 +17,7 @@
   "scripts": {
     "dev": "storybook dev -p 6006  --no-open --disable-telemetry",
     "generate-tokens": "pnpm dlx tsx src/tokens/generate-tokens.ts",
+    "generate-icons": "pnpm dlx tsx scripts/generate-icons.ts",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "build-storybook": "storybook build"
@@ -50,6 +51,7 @@
     "globals": "^17.5.0",
     "playwright": "^1.59.1",
     "storybook": "^10.3.6",
+    "svgo": "^4.0.1",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.58.2",
     "unplugin-dts": "^1.0.0",
