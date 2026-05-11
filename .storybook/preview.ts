@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/react-vite";
 import PingoTheme from "./PingoTheme";
 import "../src/styles/main.css";
+import "../src/styles/docs.css";
 
 const preview: Preview = {
   parameters: {
@@ -21,6 +22,9 @@ const preview: Preview = {
     },
     docs: {
       theme: PingoTheme,
+      toc: {
+        headingSelector: "h1, h2, h3",
+      },
     },
   },
   tags: ["autodocs"],

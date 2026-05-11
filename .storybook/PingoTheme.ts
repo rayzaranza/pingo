@@ -1,20 +1,21 @@
 import { create } from "storybook/theming/create";
-import { fontFamily, semantic } from "../src/styles/tokens.ts";
+import { font, color } from "../src/styles/tokens.ts";
 
-const bg = semantic.color.background.default;
+const bg = color.background.default;
 
 export default create({
   base: "light",
   brandTitle: "<h1><b>Pingo</b></h1>",
-  fontBase: fontFamily,
+  fontBase: font.family.default,
+  fontCode: font.family.monospace,
   appBg: bg,
   appPreviewBg: bg,
   appContentBg: bg,
   barBg: bg,
   inputBg: bg,
   buttonBg: bg,
-  textColor: semantic.color.content.default,
-  appHoverBg: semantic.color.background.hover,
-  colorPrimary: semantic.color.background.accent,
-  textMutedColor: semantic.color.content.secondary,
+  textColor: color.content.default,
+  appHoverBg: color.background.hover,
+  colorPrimary: color.background.accent.default,
+  textMutedColor: color.content.secondary,
 });
