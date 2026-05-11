@@ -4,9 +4,3 @@
   font-weight: 500;
   font-display: swap;
 }
-
-/* @TODO: remove !important and customize Storybook doc blocks */
-
-p {
-  font-size: var(--font-size-200) !important;
-}

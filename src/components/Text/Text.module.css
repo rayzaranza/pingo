@@ -1,0 +1,41 @@
+.text {
+  font-family: var(--font-family);
+  margin-block: 0;
+}
+
+.heading {
+  font-weight: var(--font-weight-bold);
+
+  &.small {
+    font-size: var(--font-size-300);
+  }
+
+  &.medium {
+    font-size: var(--font-size-400);
+  }
+
+  &.large {
+    font-size: var(--font-size-500);
+  }
+}
+
+.body {
+  font-weight: var(--font-weight-regular);
+
+  &.small {
+    font-size: var(--font-size-100);
+  }
+
+  &.medium {
+    font-size: var(--font-size-200);
+  }
+
+  &.large {
+    font-size: var(--font-size-300);
+  }
+}
+
+strong.body,
+b.body {
+  font-weight: var(--font-weight-bold);
+}
