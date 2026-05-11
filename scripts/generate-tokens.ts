@@ -5,8 +5,8 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const SRC = resolve(__dirname, "./tokens.json");
-const OUT = resolve(__dirname, "../styles/tokens.ts");
+const SRC = resolve(__dirname, "../src/styles/tokens.json");
+const OUT = resolve(__dirname, "../src/styles/tokens.ts");
 
 // ── DTCG types ────────────────────────────────────────────────────────────────
 
