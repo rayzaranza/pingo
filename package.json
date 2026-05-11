@@ -50,6 +50,7 @@
     "globals": "^17.5.0",
     "playwright": "^1.59.1",
     "storybook": "^10.3.6",
+    "svgo": "^4.0.1",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.58.2",
     "unplugin-dts": "^1.0.0",
