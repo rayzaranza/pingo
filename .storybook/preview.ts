@@ -22,6 +22,9 @@ const preview: Preview = {
     },
     docs: {
       theme: PingoTheme,
+      toc: {
+        headingSelector: "h1, h2, h3",
+      },
     },
   },
   tags: ["autodocs"],
