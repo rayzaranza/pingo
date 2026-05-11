@@ -6,6 +6,7 @@ import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import { playwright } from "@vitest/browser-playwright";
 import { resolve } from "node:path";
 import dts from "unplugin-dts/vite";
+import { extractFonts } from "./plugins/extractFonts";
 
 export default defineConfig({
   build: {
@@ -38,6 +39,7 @@ export default defineConfig({
     babel({
       presets: [reactCompilerPreset()],
     }),
+    extractFonts(),
   ],
   test: {
     projects: [
