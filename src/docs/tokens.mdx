@@ -1,0 +1,166 @@
+import { color, font, radius, size, space } from "@/styles/tokens";
+import {
+  Meta,
+  Title,
+  Typeset,
+  ColorPalette,
+  ColorItem,
+  Subtitle,
+} from "@storybook/addon-docs/blocks";
+
+<Meta title="Design Tokens" />
+
+<Title>Design Tokens</Title>
+
+Design tokens are the main source of design decisions used to style everything
+in Pingo UI.
+
+All tokens are available as CSS Variables when you import the `pingo-ui/styles.css` into the main file of your app.
+
+You can also import `pingo-ui/tokens` to use tokens in JS/TS.
+
+## Typography
+
+#### Font Family
+
+- **--font-family**: <code>{font.family.default}</code>
+- **--font-family-monospace**: <code>{font.family.monospace}</code>
+
+#### Font Weight
+
+- **--font-weight-regular**: <code>{font.weight.regular}</code>
+- **--font-weight-bold**: <code>{font.weight.bold}</code>
+
+#### Font Size
+
+<ul>
+  {Object.entries(font.size).map(([a, b]) => (
+    <li key={a}>
+      <strong>--font-size-{a}</strong>: <code>{b}</code>
+    </li>
+  ))}
+</ul>
+
+<Typeset
+  fontSizes={Object.values(font.size).map(
+    (f) => Number(f.replace("rem", "")) * 16,
+  )}
+  sampleText="Pingo"
+  fontFamily={font.family.default}
+  fontWeight={font.weight.bold}
+/>
+
+## Space
+
+Spacing scale for gaps, paddings and margins.
+
+<ul>
+  {Object.entries(space).map(([a, b]) => (
+    <li key={a}>
+      <strong>--space-{a}</strong>: <code>{b}</code>
+    </li>
+  ))}
+</ul>
+
+## Size
+
+Size scale for elements, generally for height to better align elements in a row.
+
+<ul>
+  {Object.entries(size).map(([a, b]) => (
+    <li key={a}>
+      <strong>--size-{a}</strong>: <code>{b}</code>
+    </li>
+  ))}
+</ul>
+
+## Radius
+
+Tokens for border-radius
+
+<ul>
+  {Object.entries(radius).map(([a, b]) => (
+    <li key={a}>
+      <strong>--radius-{a}</strong>: <code>{b}</code>
+    </li>
+  ))}
+</ul>
+
+## Colors
+
+The color tokens are separated in three layers: primitive, semantic and interactive.
+
+### Primitive
+
+The global palette of colors, it serves as the scale of options avaiable to be used on semantic tokens.
+
+<ColorPalette>
+  <ColorItem title="--color-neutral-100" colors={color.neutral} />
+  <ColorItem title="--color-blue-100" colors={color.blue} />
+  <ColorItem title="--color-red-100" colors={color.red} />
+  <ColorItem title="--color-green-100" colors={color.green} />
+  <ColorItem title="--color-yellow-100" colors={color.yellow} />
+</ColorPalette>
+
+### Semantic
+
+Colors with semantic meaning, defining where to use. You'll be using this the most.
+
+<ColorPalette>
+  <ColorItem
+    title="--color-background"
+    colors={{
+      "": color.background.default,
+      Accent: color.background.accent.default,
+      Danger: color.background.danger,
+      Success: color.background.success,
+      Warning: color.background.warning,
+    }}
+  />
+  <ColorItem
+    title="--color-border"
+    colors={{
+      "": color.border.default,
+      Secondary: color.border.secondary,
+      Accent: color.border.accent,
+      Danger: color.border.onDanger,
+      Success: color.border.onSuccess,
+      Warning: color.border.onWarning,
+    }}
+  />
+  <ColorItem
+    title="--color-content"
+    colors={{
+      "": color.content.default,
+      Secondary: color.content.secondary,
+      Accent: color.content.accent,
+      OnAccent: color.content.onAccent,
+      OnDanger: color.content.onDanger,
+      OnSuccess: color.content.onSuccess,
+      OnWarning: color.content.onWarning,
+    }}
+  />
+</ColorPalette>
+
+### Interactive
+
+Colors that represent changes in the state of the element receiving user interactions.
+
+<ColorPalette>
+  <ColorItem
+    title="--color-background-hover"
+    colors={{
+      "": color.background.default,
+      Hover: color.background.hover,
+      Pressed: color.background.pressed,
+    }}
+  />
+  <ColorItem
+    title="--color-background-accent-hover"
+    colors={{
+      Accent: color.background.accent.default,
+      Hover: color.background.accent.hover,
+      Pressed: color.background.accent.pressed,
+    }}
+  />
+</ColorPalette>
