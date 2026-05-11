@@ -16,7 +16,7 @@
   },
   "scripts": {
     "dev": "storybook dev -p 6006  --no-open --disable-telemetry",
-    "generate-tokens": "pnpm dlx tsx src/tokens/generate-tokens.ts",
+    "generate-tokens": "pnpm dlx tsx scripts/generate-tokens.ts",
     "generate-icons": "pnpm dlx tsx scripts/generate-icons.ts",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
