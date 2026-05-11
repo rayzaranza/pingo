@@ -1,0 +1,27 @@
+import {
+  Meta,
+  Title,
+  IconGallery,
+  IconItem,
+} from "@storybook/addon-docs/blocks";
+
+import { Icon } from "@/components/Icon/Icon";
+import { icons } from "@/components/Icon/icons";
+
+<Meta title="Icons" />
+<Title>Icons</Title>
+
+The icon library for all UI elements.
+
+All icons are extracted from https://github.com/Mage-Icons/mage-icons and generated as React components to be rendered as inline SVG.
+
+To use them, you need pass the prop `name` on the `<Icon>` component.
+
+<IconGallery>
+  {console.log(icons)}
+  {Object.keys(icons).map((icon) => (
+    <IconItem name={icon}>
+      <Icon name={icon} />
+    </IconItem>
+  ))}
+</IconGallery>

@@ -5,6 +5,11 @@ import "../src/styles/docs.css";
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: ["Design Tokens", "Icons"],
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
