@@ -1,9 +1,11 @@
-import type { Preview } from "@storybook/react-vite";
+import addonDocs from "@storybook/addon-docs";
+import addonA11y from "@storybook/addon-a11y";
+import { definePreview } from "@storybook/react-vite";
 import PingoTheme from "./PingoTheme";
 import "../src/styles/main.css";
 import "../src/styles/docs.css";
 
-const preview: Preview = {
+export default definePreview({
   parameters: {
     options: {
       storySort: {
@@ -32,10 +34,12 @@ const preview: Preview = {
       },
     },
   },
+
   tags: ["autodocs"],
+
   initialGlobals: {
     backgrounds: { value: "light" },
   },
-};
 
-export default preview;
+  addons: [addonA11y(), addonDocs()]
+});
