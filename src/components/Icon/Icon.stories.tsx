@@ -1,12 +1,10 @@
+import preview from "#.storybook/preview";
 import { Icon } from "./Icon";
-import type { Meta, StoryObj } from "@storybook/react-vite";
 
-const meta = { component: Icon } satisfies Meta<typeof Icon>;
-type Story = StoryObj<typeof meta>;
-export default meta;
+const meta = preview.meta({ component: Icon });
 
-export const Default: Story = {
+export const Default = meta.story({
   args: {
     name: "arrow-left",
   },
-};
+});

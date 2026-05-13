@@ -1,28 +1,26 @@
+import preview from "#.storybook/preview";
 import { Text } from "./Text";
-import type { Meta, StoryObj } from "@storybook/react-vite";
 
-const meta = { component: Text } satisfies Meta<typeof Text>;
-type Story = StoryObj<typeof meta>;
-export default meta;
+const meta = preview.meta({ component: Text });
 
-export const Default: Story = {
+export const Default = meta.story({
   args: {
     children: "Text",
   },
-};
+});
 
-export const Body: Story = {
+export const Body = meta.story({
   args: {
     children: "Body",
     variant: "body",
     size: "medium",
   },
-};
+});
 
-export const Heading: Story = {
+export const Heading = meta.story({
   args: {
     children: "Heading",
     variant: "heading",
     size: "large",
   },
-};
+});

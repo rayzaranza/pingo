@@ -1,26 +1,23 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import preview from "#.storybook/preview";
 
 import { Button } from "./Button";
 
-const meta = {
+const meta = preview.meta({
   component: Button,
-} satisfies Meta<typeof Button>;
+});
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const AccentButton: Story = {
+export const AccentButton = meta.story({
   args: {
     variant: "accent",
     size: "medium",
     children: "Button",
   },
-};
+});
 
-export const DefaultButton: Story = {
+export const DefaultButton = meta.story({
   args: {
     variant: "default",
     size: "medium",
     children: "Button",
   },
-};
+});
