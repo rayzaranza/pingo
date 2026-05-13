@@ -131,6 +131,7 @@
   --color-background-danger: var(--color-red-100);
   --color-background-success: var(--color-green-100);
   --color-background-warning: var(--color-yellow-100);
+  --color-background-info: var(--color-neutral-200);
 
   /* ----------------------------------------------------------
      Color — Semantic: Border
@@ -141,6 +142,7 @@
   --color-border-on-danger: var(--color-red-200);
   --color-border-on-success: var(--color-green-200);
   --color-border-on-warning: var(--color-yellow-200);
+  --color-border-on-info: var(--color-neutral-300);
 
   /* ----------------------------------------------------------
      Color — Semantic: Content
@@ -152,4 +154,5 @@
   --color-content-on-danger: var(--color-red-900);
   --color-content-on-success: var(--color-green-900);
   --color-content-on-warning: var(--color-yellow-900);
+  --color-content-on-info: var(--color-neutral-600);
 }
