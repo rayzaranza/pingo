@@ -1,4 +1,4 @@
-import { create } from "storybook/theming/create";
+import { create } from "storybook/theming";
 import { font, color } from "../src/styles/tokens.ts";
 
 const bg = color.background.default;
