@@ -10,3 +10,16 @@ body {
   font-size: var(--font-size-200);
   font-weight: var(--font-weight-regular);
 }
+
+button,
+[href],
+input,
+select,
+textarea,
+[tabindex],
+[contenteditable] {
+  &:focus-visible {
+    outline: 3px solid var(--color-border-accent);
+    outline-offset: 2px;
+  }
+}
