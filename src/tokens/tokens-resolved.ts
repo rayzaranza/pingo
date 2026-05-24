@@ -1,0 +1,154 @@
+export const color = {
+  "white": "#FFFFFF",
+  "black": "#18181B",
+  "blue": {
+    "100": "#DBEAFE",
+    "200": "#BEDBFF",
+    "300": "#8EC5FF",
+    "400": "#50A2FF",
+    "500": "#2B7FFF",
+    "600": "#155DFC",
+    "700": "#1447E6",
+    "800": "#193CB8",
+    "900": "#1C398E"
+  },
+  "neutral": {
+    "100": "#F4F4F5",
+    "200": "#E4E4E7",
+    "300": "#D4D4D8",
+    "400": "#9F9FA9",
+    "500": "#71717B",
+    "600": "#52525C",
+    "700": "#3F3F46",
+    "800": "#27272A",
+    "900": "#18181B"
+  },
+  "red": {
+    "100": "#FFE2E2",
+    "200": "#FFC9C9",
+    "300": "#FFA2A2",
+    "400": "#FF6467",
+    "500": "#FB2C36",
+    "600": "#E7000B",
+    "700": "#C10007",
+    "800": "#9F0712",
+    "900": "#82181A"
+  },
+  "green": {
+    "100": "#D0FAE5",
+    "200": "#A4F4CF",
+    "300": "#5EE9B5",
+    "400": "#00D492",
+    "500": "#00BC7D",
+    "600": "#009966",
+    "700": "#007A55",
+    "800": "#006045",
+    "900": "#004F3B"
+  },
+  "yellow": {
+    "100": "#FEF3C6",
+    "200": "#FEE685",
+    "300": "#FFD230",
+    "400": "#FFB900",
+    "500": "#FE9A00",
+    "600": "#E17100",
+    "700": "#BB4D00",
+    "800": "#963C00",
+    "900": "#7A3306"
+  },
+  "background": {
+    "default": "#F4F4F5",
+    "dangerMuted": "#FFE2E2",
+    "successMuted": "#D0FAE5",
+    "warningMuted": "#FEF3C6",
+    "infoMuted": "#E4E4E7",
+    "hover": "#E4E4E7",
+    "pressed": "#D4D4D8",
+    "active": "#BEDBFF",
+    "disabled": "#F4F4F5",
+    "accent": {
+      "default": "#155DFC",
+      "hover": "#1447E6",
+      "pressed": "#193CB8",
+      "disabled": "#E4E4E7"
+    },
+    "danger": {
+      "default": "#E7000B",
+      "hover": "#C10007",
+      "pressed": "#9F0712",
+      "disabled": "#E4E4E7"
+    }
+  },
+  "border": {
+    "default": "#9F9FA9",
+    "secondary": "#D4D4D8",
+    "accent": "#2B7FFF",
+    "danger": "#FB2C36",
+    "onDangerMuted": "#FFC9C9",
+    "onSuccessMuted": "#A4F4CF",
+    "onWarningMuted": "#FEE685",
+    "onInfoMuted": "#D4D4D8",
+    "onActive": "#50A2FF",
+    "disabled": "#D4D4D8"
+  },
+  "content": {
+    "default": "#18181B",
+    "secondary": "#52525C",
+    "accent": "#1447E6",
+    "danger": "#C10007",
+    "warning": "#BB4D00",
+    "success": "#007A55",
+    "onAccent": "#FFFFFF",
+    "onDanger": "#FFFFFF",
+    "onDangerMuted": "#82181A",
+    "onSuccessMuted": "#004F3B",
+    "onWarningMuted": "#7A3306",
+    "onInfoMuted": "#27272A",
+    "onActive": "#193CB8",
+    "disabled": "#9F9FA9"
+  }
+};
+
+export const radius = {
+  "small": "4px",
+  "medium": "8px",
+  "large": "16px",
+  "max": "999px"
+};
+
+export const size = {
+  "small": "1.75rem",
+  "medium": "2.25rem",
+  "large": "2.75rem"
+};
+
+export const space = {
+  "100": "0.25rem",
+  "200": "0.5rem",
+  "300": "0.75rem",
+  "400": "1rem",
+  "500": "1.5rem",
+  "600": "2rem",
+  "700": "3rem",
+  "800": "4rem",
+  "900": "6rem"
+};
+
+export const font = {
+  "size": {
+    "100": "0.875rem",
+    "200": "1rem",
+    "300": "1.25rem",
+    "400": "1.5rem",
+    "500": "2rem"
+  },
+  "weight": {
+    "regular": "400",
+    "bold": "700"
+  },
+  "family": {
+    "default": "Outfit, sans-serif",
+    "code": "Fira Code, monospace"
+  }
+};
+

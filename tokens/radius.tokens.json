@@ -1,0 +1,43 @@
+{
+  "radius": {
+    "small": {
+      "$type": "number",
+      "$value": 4,
+      "$description": "Subtle rounding. Used for tags, badges and compact elements.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:14:150",
+        "com.figma.scopes": ["CORNER_RADIUS"]
+      }
+    },
+    "medium": {
+      "$type": "number",
+      "$value": 8,
+      "$description": "Standard rounding. Used for cards, modals and most components.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:14:151",
+        "com.figma.scopes": ["CORNER_RADIUS"]
+      }
+    },
+    "large": {
+      "$type": "number",
+      "$value": 16,
+      "$description": "Generous rounding. Used for panels and containers.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:14:152",
+        "com.figma.scopes": ["CORNER_RADIUS"]
+      }
+    },
+    "max": {
+      "$type": "number",
+      "$value": 999,
+      "$description": "Pill shape. Used for buttons and fully rounded elements.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:14:153",
+        "com.figma.scopes": ["CORNER_RADIUS"]
+      }
+    }
+  },
+  "$extensions": {
+    "com.figma.modeName": "radius"
+  }
+}

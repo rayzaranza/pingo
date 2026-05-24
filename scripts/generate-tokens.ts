@@ -1,150 +1,174 @@
-// This script is enerated by Claude
+import { readFileSync, readdirSync, writeFileSync } from "node:fs";
+import path from "node:path";
+import type { FigmaTokenObject } from "./figma-types";
+import { unflatten } from "flat";
 
-import { readFileSync, writeFileSync } from "node:fs";
-import { resolve, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+const baseDir = import.meta.dirname;
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const SRC = resolve(__dirname, "../src/styles/tokens.json");
-const OUT = resolve(__dirname, "../src/styles/tokens.ts");
-
-// ── DTCG types ────────────────────────────────────────────────────────────────
-
-type DimensionValue = { value: number; unit: string };
-type RawTokenValue = string | number | DimensionValue;
-
-interface TokenNode {
-  $value: RawTokenValue;
-  $type?: string;
-  $description?: string;
-  [key: string]: TokenNode | RawTokenValue | string | undefined;
+interface Token {
+  name: string;
+  value: string;
+  description?: string;
 }
 
-interface GroupNode {
-  [key: string]: TokenNode | GroupNode | RawTokenValue | string | undefined;
+function isAlias(value: string) {
+  return value.startsWith("{") && value.endsWith("}");
 }
 
-type ExtractedValue = string | number | ExtractedObject;
-interface ExtractedObject {
-  [key: string]: ExtractedValue;
-}
-
-// ── Helpers ───────────────────────────────────────────────────────────────────
-
-function resolveDimension({ value, unit }: DimensionValue): string {
-  return `${value}${unit}`;
-}
-
-function resolveRef(ref: string, root: GroupNode): ExtractedValue {
-  const path = ref.slice(1, -1).split(".");
-  let node: GroupNode | TokenNode | RawTokenValue | undefined = root;
-
-  for (const key of path) {
-    if (typeof node !== "object" || node === null) {
-      throw new Error(`Unresolved token reference: ${ref}`);
+function formatValueUnit(token: FigmaTokenObject) {
+  for (const scope of token.$extensions["com.figma.scopes"]) {
+    switch (scope) {
+      case "FONT_SIZE":
+      case "GAP":
+      case "WIDTH_HEIGHT":
+        return `${Number(token.$value) / 16}rem`;
+      case "CORNER_RADIUS":
+        return `${token.$value}px`;
+      default:
+        return token.$value.toString();
     }
-    node = (node as GroupNode)[key] as
-      | GroupNode
-      | TokenNode
-      | RawTokenValue
-      | undefined;
   }
-
-  if (typeof node !== "object" || node === null || !("$value" in node)) {
-    throw new Error(`Reference does not point to a token: ${ref}`);
-  }
-
-  return resolveValue((node as TokenNode).$value, root);
+  return token.$value.toString();
 }
 
-function resolveValue(value: RawTokenValue, root: GroupNode): ExtractedValue {
-  if (typeof value === "string" && value.startsWith("{")) {
-    return resolveRef(value, root);
+function formatValue(token: FigmaTokenObject) {
+  if (typeof token.$value === "object" && "hex" in token.$value) {
+    return token.$value.hex;
   }
-  if (typeof value === "object" && "unit" in value) {
-    return resolveDimension(value);
-  }
-  return value;
+  return formatValueUnit(token);
 }
 
-// Recursively walks a DTCG node tree into plain JS values.
-// Root tokens (nodes with $value AND non-$ children) become { default: value, ...children }.
-function extract(node: TokenNode | GroupNode, root: GroupNode): ExtractedValue {
-  if (typeof node !== "object" || node === null) return node as ExtractedValue;
-
-  const isToken = "$value" in node;
-  const children = Object.entries(node).filter(([k]) => !k.startsWith("$")) as [
-    string,
-    TokenNode | GroupNode,
-  ][];
-
-  if (isToken && children.length === 0) {
-    return resolveValue((node as TokenNode).$value, root);
-  }
-
-  if (isToken && children.length > 0) {
-    const result: ExtractedObject = {
-      default: resolveValue((node as TokenNode).$value, root),
-    };
-    for (const [key, child] of children) {
-      result[key] = extract(child, root);
-    }
+function extractTokens(
+  tokenObject: FigmaTokenObject,
+  prefix: string[] = [],
+  result: Token[] = [],
+) {
+  if ("$value" in tokenObject) {
+    result.push({
+      name: prefix.filter((p) => p !== "$root").join("."),
+      value: formatValue(tokenObject),
+      ...(tokenObject.$description && {
+        description: tokenObject.$description,
+      }),
+    });
     return result;
   }
-
-  const result: ExtractedObject = {};
-  for (const [key, child] of children) {
-    result[key] = extract(child, root);
+  for (const [key, value] of Object.entries(tokenObject)) {
+    if (key === "$extensions") continue;
+    extractTokens(value as FigmaTokenObject, [...prefix, key], result);
   }
   return result;
 }
 
-// ── Extract ───────────────────────────────────────────────────────────────────
-
-const raw = JSON.parse(readFileSync(SRC, "utf-8")) as GroupNode;
-
-const font = extract(raw.font as GroupNode, raw) as ExtractedObject;
-const space = extract(raw.space as GroupNode, raw) as ExtractedObject;
-const size = extract(raw.size as GroupNode, raw) as ExtractedObject;
-const radius = extract(raw.radius as GroupNode, raw) as ExtractedObject;
-const color = extract(raw.color as GroupNode, raw) as ExtractedObject;
-
-// ── Serializer ────────────────────────────────────────────────────────────────
-
-function serialize(value: ExtractedValue, depth = 0): string {
-  const pad = "  ".repeat(depth);
-  const innerPad = "  ".repeat(depth + 1);
-
-  if (typeof value === "string") return `"${value}"`;
-  if (typeof value === "number") return String(value);
-
-  const entries = Object.entries(value);
-  if (entries.length === 0) return "{}";
-
-  const lines = entries.map(([k, v]) => {
-    const key = /^\d|[^a-zA-Z0-9_$]/.test(k) ? `"${k}"` : k;
-    return `${innerPad}${key}: ${serialize(v, depth + 1)}`;
-  });
-
-  return `{\n${lines.join(",\n")}\n${pad}}`;
+function getTokensFromFile(path: string) {
+  const file = readFileSync(path, "utf-8");
+  const tokens = extractTokens(JSON.parse(file));
+  return tokens;
 }
 
-// ── Output ────────────────────────────────────────────────────────────────────
+function formatCssVariableAlias(value: string) {
+  return `var(--${value.replace("{", "").replace("}", "").replaceAll(".", "-")})`;
+}
 
-const output = `\
-// Auto-generated from tokens.json — do not edit manually.
-// Run: npx tsx scripts/generate-tokens.ts
+function generateCss(filePath: string, tokens: Token[]) {
+  let css = ":root {\n";
+  for (const token of tokens) {
+    const name = token.name.replaceAll(".", "-");
+    const value = isAlias(token.value)
+      ? formatCssVariableAlias(token.value)
+      : token.value;
+    css += `  --${name}: ${value};\n`;
+  }
+  css += "}\n";
+  writeFileSync(path.join(baseDir, "../src/styles", filePath), css);
+  console.info(`✅ ${filePath} generated.`);
+}
 
-export const font = ${serialize(font)} as const;
+function resolveValue(value: string, tokens: Token[]) {
+  if (isAlias(value)) {
+    const token = tokens.find(({ name }) => `{${name}}` === value);
+    return token?.value;
+  }
+  return value;
+}
 
-export const space = ${serialize(space)} as const;
+function convertKebabToCamelCase(value: string) {
+  return value
+    .split("-")
+    .map((word, index) => {
+      if (index === 0) {
+        return word;
+      }
+      return word.slice(0, 1).toUpperCase() + word.slice(1);
+    })
+    .join("");
+}
 
-export const size = ${serialize(size)} as const;
+function generateJs(
+  filePath: string,
+  tokens: Token[],
+  output?: "docs" | "cssVars" | "resolved",
+) {
+  const tokensObject = Object.fromEntries(
+    tokens.map(({ name, value, description }) => {
+      const formattedName = name.includes("-")
+        ? convertKebabToCamelCase(name)
+        : name;
+      switch (output) {
+        case "docs":
+          return [
+            formattedName,
+            {
+              name,
+              value,
+              description,
+              cssVariable: formatCssVariableAlias(name),
+            },
+          ];
+        case "cssVars":
+          return [formattedName, formatCssVariableAlias(name)];
+        case "resolved":
+          return [formattedName, resolveValue(value, tokens)];
+        default:
+          return [formattedName, value];
+      }
+    }),
+  );
 
-export const radius = ${serialize(radius)} as const;
+  const tokensNested: object = unflatten(tokensObject, { object: true });
+  const groups = Object.keys(tokensNested);
 
-export const color = ${serialize(color)} as const;
-`;
+  let fileContent = "";
+  for (const group of groups) {
+    const tokensString = JSON.stringify(
+      tokensNested[group as keyof object],
+      null,
+      2,
+    );
+    fileContent += `export const ${group} = ${tokensString};\n\n`;
+  }
+  writeFileSync(path.join(baseDir, "../src/tokens", filePath), fileContent);
+  console.info(`✅ ${filePath} generated.`);
+}
 
-writeFileSync(OUT, output, "utf-8");
-console.log(`tokens.ts written to ${OUT}`);
+function getTokensFromFolder(dir: string) {
+  const fileNames = readdirSync(dir).filter(
+    (file) => path.extname(file) === ".json",
+  );
+  const allTokens = [];
+  for (const fileName of fileNames) {
+    const tokens = getTokensFromFile(path.join(dir, fileName));
+    allTokens.push(...tokens);
+  }
+  return allTokens;
+}
+
+function generateFiles() {
+  const tokens = getTokensFromFolder("tokens");
+  generateCss("tokens.css", tokens);
+  generateJs("tokens-vars.ts", tokens, "cssVars");
+  generateJs("tokens-resolved.ts", tokens, "resolved");
+  generateJs("tokens-docs.ts", tokens, "docs");
+}
+
+generateFiles();

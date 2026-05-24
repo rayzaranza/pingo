@@ -1,0 +1,106 @@
+{
+  "space": {
+    "100": {
+      "$type": "number",
+      "$value": 4,
+      "$description": "Smallest spacing unit. Used for inline gaps and compact padding.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:13:134",
+        "com.figma.scopes": [
+          "GAP"
+        ]
+      }
+    },
+    "200": {
+      "$type": "number",
+      "$value": 8,
+      "$description": "Extra small spacing. Used for icon-to-label gaps.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:13:135",
+        "com.figma.scopes": [
+          "GAP"
+        ]
+      }
+    },
+    "300": {
+      "$type": "number",
+      "$value": 12,
+      "$description": "Small spacing. Used for inner padding in compact components.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:13:136",
+        "com.figma.scopes": [
+          "GAP"
+        ]
+      }
+    },
+    "400": {
+      "$type": "number",
+      "$value": 16,
+      "$description": "Base spacing unit. Used for standard component padding.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:13:137",
+        "com.figma.scopes": [
+          "GAP"
+        ]
+      }
+    },
+    "500": {
+      "$type": "number",
+      "$value": 24,
+      "$description": "Medium spacing. Used for padding in larger components.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:13:138",
+        "com.figma.scopes": [
+          "GAP"
+        ]
+      }
+    },
+    "600": {
+      "$type": "number",
+      "$value": 32,
+      "$description": "Large spacing. Used for section gaps and generous padding.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:13:139",
+        "com.figma.scopes": [
+          "GAP"
+        ]
+      }
+    },
+    "700": {
+      "$type": "number",
+      "$value": 48,
+      "$description": "Extra large spacing. Used for layout-level gaps.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:13:140",
+        "com.figma.scopes": [
+          "GAP"
+        ]
+      }
+    },
+    "800": {
+      "$type": "number",
+      "$value": 64,
+      "$description": "2XL spacing. Used for page-level margins.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:13:141",
+        "com.figma.scopes": [
+          "GAP"
+        ]
+      }
+    },
+    "900": {
+      "$type": "number",
+      "$value": 96,
+      "$description": "Largest spacing unit. Used for major section separation.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:13:142",
+        "com.figma.scopes": [
+          "GAP"
+        ]
+      }
+    }
+  },
+  "$extensions": {
+    "com.figma.modeName": "space"
+  }
+}
