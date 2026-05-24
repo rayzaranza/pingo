@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
 import styles from "./Text.module.css";
-import { cn } from "@/utils/classNames";
+import classNames from "classnames/bind";
 import { color as colorTokens } from "@/tokens/tokens-vars";
+
+const cx = classNames.bind(styles);
 
 interface TextProps {
   /** The content to be rendered */
@@ -32,7 +34,7 @@ export function Text({
   const Component = as;
   return (
     <Component
-      className={cn([styles.text, styles[variant], styles[size], className])}
+      className={cx([styles.text, styles[variant], styles[size], className])}
       style={{ color }}
     >
       {children}
