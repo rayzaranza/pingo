@@ -1,0 +1,45 @@
+import { Meta, Title, Typeset } from "@storybook/addon-docs/blocks";
+import { font } from "@/tokens/tokens-docs";
+import { Text } from "@/components/Text/Text";
+
+<Meta title="Design Tokens/Typography" />
+
+<Title>Typography</Title>
+
+## Font Family
+
+#### font.family.default
+
+{font.family.default.description}
+
+- Value: <code>{font.family.default.value}</code>
+- CSS Variable: <code>{font.family.default.cssVariable}</code>
+
+#### font.family.code
+
+{font.family.code.description}
+
+- Value: <code>{font.family.code.value}</code>
+- CSS Variable: <code>{font.family.code.cssVariable}</code>
+
+## Font Weight
+
+- **font.weight.regular**: <code>{font.weight.regular.value}</code>
+- **font.weight.bold**: <code>{font.weight.bold.value}</code>
+
+## Font Size
+
+<ul>
+  {Object.entries(font.size).map(([key, { value }]) => (
+    <li key={key}>
+      <strong>font.size.{key}</strong>: <code>{value}</code>
+    </li>
+  ))}
+</ul>
+
+<Typeset
+  fontSizes={Object.values(font.size).map(({ value }) => value)}
+  sampleText="Pingo"
+  fontFamily={font.family.default.value}
+  fontWeight={font.weight.bold.value}
+/>

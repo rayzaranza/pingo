@@ -1,0 +1,21 @@
+import { Meta, Title } from "@storybook/addon-docs/blocks";
+import { space } from "@/tokens/tokens-docs";
+import { Text } from "@/components/Text/Text";
+
+<Meta title="Design Tokens/Space" />
+
+<Title>Space</Title>
+
+Spacing scale for gaps, paddings and margins.
+
+<ul>
+  {Object.entries(space).map(([key, { name, value, description }]) => (
+    <li key={name}>
+      <strong>{name}</strong>: <code>{value}</code>
+      <br />
+      <Text size="small" color="var(--color-content-secondary)">
+        {description}
+      </Text>
+    </li>
+  ))}
+</ul>

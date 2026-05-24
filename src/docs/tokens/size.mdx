@@ -1,0 +1,21 @@
+import { Meta, Title } from "@storybook/addon-docs/blocks";
+import { size } from "@/tokens/tokens-docs";
+import { Text } from "@/components/Text/Text";
+
+<Meta title="Design Tokens/Size" />
+
+<Title>Size</Title>
+
+Size scale for elements, generally for height to better align elements in a row.
+
+<ul>
+  {Object.entries(size).map(([key, { name, value, description }]) => (
+    <li key={key}>
+      <strong>{name}</strong>: <code>{value}</code>
+      <br />
+      <Text size="small" color="var(--color-content-secondary)">
+        {description}
+      </Text>
+    </li>
+  ))}
+</ul>

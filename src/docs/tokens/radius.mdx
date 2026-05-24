@@ -1,0 +1,21 @@
+import { Meta, Title } from "@storybook/addon-docs/blocks";
+import { radius } from "@/tokens/tokens-docs";
+import { Text } from "@/components/Text/Text";
+
+<Meta title="Design Tokens/Radius" />
+
+<Title>Radius</Title>
+
+Tokens for corner/border radius
+
+<ul>
+  {Object.entries(radius).map(([key, { name, value, description }]) => (
+    <li key={key}>
+      <strong>{name}</strong>: <code>{value}</code>
+      <br />
+      <Text size="small" color="var(--color-content-secondary)">
+        {description}
+      </Text>
+    </li>
+  ))}
+</ul>
