@@ -1,4 +1,5 @@
-import { color, font, radius, size, space } from "@/styles/tokens";
+import { color, font, radius, size, space } from "@/tokens/tokens-resolved";
+
 import {
   Meta,
   Title,
@@ -23,8 +24,8 @@ You can also import `pingo-ui/tokens` to use tokens in JS/TS.
 
 #### Font Family
 
-- **--font-family**: <code>{font.family.default}</code>
-- **--font-family-monospace**: <code>{font.family.monospace}</code>
+- **--font-family-default**: <code>{font.family.default}</code>
+- **--font-family-code**: <code>{font.family.monospace}</code>
 
 #### Font Weight
 
@@ -110,34 +111,36 @@ Colors with semantic meaning, defining where to use. You'll be using this the mo
   <ColorItem
     title="--color-background"
     colors={{
-      "": color.background.default,
+      Default: color.background.default,
       Accent: color.background.accent.default,
-      Danger: color.background.danger,
-      Success: color.background.success,
-      Warning: color.background.warning,
+      Danger: color.background.danger.default,
+      SuccessMuted: color.background.successMuted,
+      WarningMuted: color.background.warningMuted,
+      DangerMuted: color.background.dangerMuted,
     }}
   />
   <ColorItem
     title="--color-border"
     colors={{
-      "": color.border.default,
+      Default: color.border.default,
       Secondary: color.border.secondary,
       Accent: color.border.accent,
-      Danger: color.border.onDanger,
-      Success: color.border.onSuccess,
-      Warning: color.border.onWarning,
+      Danger: color.border.danger,
+      OnDangerMuted: color.border.onDangerMuted,
+      OnSuccessMuted: color.border.onSuccessMuted,
+      OnWarningMuted: color.border.onWarningMuted,
     }}
   />
   <ColorItem
     title="--color-content"
     colors={{
-      "": color.content.default,
+      Default: color.content.default,
       Secondary: color.content.secondary,
       Accent: color.content.accent,
       OnAccent: color.content.onAccent,
-      OnDanger: color.content.onDanger,
-      OnSuccess: color.content.onSuccess,
-      OnWarning: color.content.onWarning,
+      OnDangerMuted: color.content.onDangerMuted,
+      OnSuccessMuted: color.content.onSuccessMuted,
+      OnWarningMuted: color.content.onWarningMuted,
     }}
   />
 </ColorPalette>
@@ -148,17 +151,17 @@ Colors that represent changes in the state of the element receiving user interac
 
 <ColorPalette>
   <ColorItem
-    title="--color-background-hover"
+    title="--color-background-default"
     colors={{
-      "": color.background.default,
+      Default: color.background.default,
       Hover: color.background.hover,
       Pressed: color.background.pressed,
     }}
   />
   <ColorItem
-    title="--color-background-accent-hover"
+    title="--color-background-accent-default"
     colors={{
-      Accent: color.background.accent.default,
+      Default: color.background.accent.default,
       Hover: color.background.accent.hover,
       Pressed: color.background.accent.pressed,
     }}

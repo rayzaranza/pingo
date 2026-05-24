@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import styles from "./Text.module.css";
 import { cn } from "@/utils/classNames";
+import { color as colorTokens } from "@/tokens/tokens-vars";
 
 interface TextProps {
   /** The content to be rendered */
@@ -26,7 +27,7 @@ export function Text({
   as = "span",
   variant = "body",
   size = "medium",
-  color = "var(--color-content)",
+  color = colorTokens.content.default,
 }: TextProps) {
   const Component = as;
   return (

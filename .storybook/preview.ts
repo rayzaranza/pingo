@@ -2,8 +2,7 @@ import addonDocs from "@storybook/addon-docs";
 import addonA11y from "@storybook/addon-a11y";
 import { definePreview } from "@storybook/react-vite";
 import PingoTheme from "./PingoTheme";
-import "../src/styles/main.css";
-import "../src/styles/docs.css";
+import "#src/styles/main.css";
 
 export default definePreview({
   parameters: {
@@ -41,5 +40,5 @@ export default definePreview({
     backgrounds: { value: "light" },
   },
 
-  addons: [addonA11y(), addonDocs()]
+  addons: [addonA11y(), addonDocs()],
 });

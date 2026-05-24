@@ -1,0 +1,34 @@
+{
+  "size": {
+    "small": {
+      "$type": "number",
+      "$value": 28,
+      "$description": "Small element height. Used for compact controls.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:14:146",
+        "com.figma.scopes": ["WIDTH_HEIGHT"]
+      }
+    },
+    "medium": {
+      "$type": "number",
+      "$value": 36,
+      "$description": "Default element height. Used for buttons, inputs and row alignment.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:14:147",
+        "com.figma.scopes": ["WIDTH_HEIGHT"]
+      }
+    },
+    "large": {
+      "$type": "number",
+      "$value": 44,
+      "$description": "Large element height. Used for prominent actions and tall controls.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:14:148",
+        "com.figma.scopes": ["WIDTH_HEIGHT"]
+      }
+    }
+  },
+  "$extensions": {
+    "com.figma.modeName": "size"
+  }
+}
