@@ -13,10 +13,17 @@ interface AlertProps {
   variant?: "success" | "error" | "warning" | "info";
   /** Additional CSS class name */
   className?: string;
+  /** Inline variant without background and border */
+  inline?: boolean;
 }
 
 /** Displays an inline message to the user with a semantic meaning */
-export function Alert({ children, variant = "info", className }: AlertProps) {
+export function Alert({
+  children,
+  variant = "info",
+  inline = false,
+  className,
+}: AlertProps) {
   function getIconName(): IconName {
     switch (variant) {
       case "error":
@@ -31,7 +38,14 @@ export function Alert({ children, variant = "info", className }: AlertProps) {
   }
 
   return (
-    <div className={cx(styles.alert, styles[variant], className)}>
+    <div
+      className={cx(
+        styles.alert,
+        styles[variant],
+        inline && styles.inline,
+        className,
+      )}
+    >
       <Icon name={getIconName()} />
       {children}
     </div>

@@ -12,25 +12,43 @@
 }
 
 .warning {
-  color: var(--color-content-on-warning);
-  background-color: var(--color-background-warning);
-  border-color: var(--color-border-on-warning);
+  color: var(--color-content-on-warning-muted);
+  background-color: var(--color-background-warning-muted);
+  border-color: var(--color-border-on-warning-muted);
+
+  &.inline {
+    color: var(--color-content-warning);
+  }
 }
 
 .error {
-  color: var(--color-content-on-danger);
-  background-color: var(--color-background-danger);
-  border-color: var(--color-border-on-danger);
+  color: var(--color-content-on-danger-muted);
+  background-color: var(--color-background-danger-muted);
+  border-color: var(--color-border-on-danger-muted);
+
+  &.inline {
+    color: var(--color-content-danger);
+  }
 }
 
 .success {
-  color: var(--color-content-on-success);
-  background-color: var(--color-background-success);
-  border-color: var(--color-border-on-success);
+  color: var(--color-content-on-success-muted);
+  background-color: var(--color-background-success-muted);
+  border-color: var(--color-border-on-success-muted);
+
+  &.inline {
+    color: var(--color-content-success);
+  }
 }
 
 .info {
-  color: var(--color-content-on-info);
-  background-color: var(--color-background-info);
-  border-color: var(--color-border-on-info);
+  color: var(--color-content-on-info-muted);
+  background-color: var(--color-background-info-muted);
+  border-color: var(--color-border-on-info-muted);
+}
+
+.inline {
+  background: none;
+  border: none;
+  padding: 0;
 }
