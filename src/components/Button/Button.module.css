@@ -1,10 +1,10 @@
 .button {
   appearance: none;
-  background-color: var(--color-background);
+  background-color: var(--color-background-default);
   color: var(--color-content-secondary);
   font-weight: var(--font-weight-regular);
-  border: 1px solid var(--color-border);
-  font-family: var(--font-family);
+  border: 1px solid var(--color-border-default);
+  font-family: var(--font-family-default);
   border-radius: var(--radius-max);
 
   &:hover {
@@ -17,7 +17,7 @@
 }
 
 .accent {
-  background-color: var(--color-background-accent);
+  background-color: var(--color-background-accent-default);
   color: var(--color-content-on-accent);
   border-color: transparent;
 
@@ -40,4 +40,36 @@
   height: var(--size-large);
   font-size: var(--font-size-200);
   padding-inline: var(--space-500);
+}
+
+.destructive {
+  color: var(--color-content-danger);
+
+  &.accent {
+    background-color: var(--color-background-danger-default);
+    color: var(--color-content-on-danger);
+    border-color: transparent;
+
+    &:hover {
+      background-color: var(--color-background-danger-hover);
+    }
+
+    &:active {
+      background-color: var(--color-background-danger-pressed);
+    }
+  }
+}
+
+.active {
+  background-color: var(--color-background-active);
+  color: var(--color-content-on-active);
+  border-color: var(--color-border-on-active);
+
+  &:hover {
+    background-color: var(--color-blue-300);
+  }
+
+  &:active {
+    background-color: var(--color-blue-400);
+  }
 }

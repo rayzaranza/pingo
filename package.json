@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
-    "@chromatic-com/storybook": "^5.2.1",
+    "classnames": "^2.5.1",
     "@eslint/js": "^10.0.1",
     "@microsoft/api-extractor": "^7.58.7",
     "@rolldown/plugin-babel": "^0.2.3",

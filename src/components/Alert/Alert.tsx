@@ -1,8 +1,10 @@
 import styles from "./Alert.module.css";
 import type { ReactNode } from "react";
-import { cn } from "@/utils/classNames.ts";
+import classNames from "classnames";
 import { Icon } from "@/components/Icon/Icon";
 import type { IconName } from "@/components/Icon/icons";
+
+const cx = classNames.bind(styles);
 
 interface AlertProps {
   /** Alert message */
@@ -29,7 +31,7 @@ export function Alert({ children, variant = "info", className }: AlertProps) {
   }
 
   return (
-    <div className={cn([styles.alert, styles[variant], className])}>
+    <div className={cx(styles.alert, styles[variant], className)}>
       <Icon name={getIconName()} />
       {children}
     </div>

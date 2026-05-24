@@ -1,7 +1,9 @@
 import type { ComponentPropsWithRef } from "react";
 import styles from "./Input.module.css";
-import { cn } from "@/utils/classNames.ts";
+import classNames from "classnames/bind";
 import { Alert } from "../Alert/Alert";
+
+const cx = classNames.bind(styles);
 
 interface InputProps extends ComponentPropsWithRef<"input"> {
   /** The label of the input */
@@ -27,12 +29,12 @@ export function Input({
 }: InputProps) {
   return (
     <div
-      className={cn([
+      className={cx(
         styles.input,
         className,
         error && styles.error,
         !showLabel ? styles.labelHidden : undefined,
-      ])}
+      )}
     >
       <label className={styles.label} htmlFor={name}>
         {label}
