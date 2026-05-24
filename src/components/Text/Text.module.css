@@ -1,5 +1,5 @@
 .text {
-  font-family: var(--font-family);
+  font-family: var(--font-family-default);
   margin-block: 0;
 }
 
