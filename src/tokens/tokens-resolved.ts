@@ -147,7 +147,7 @@ export const font = {
     "bold": "700"
   },
   "family": {
-    "default": "Outfit, sans-serif",
+    "default": "Akt, sans-serif",
     "code": "Fira Code, monospace"
   }
 };

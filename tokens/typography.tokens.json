@@ -7,9 +7,7 @@
         "$description": "Smallest text size. Used for captions and helper text.",
         "$extensions": {
           "com.figma.variableId": "VariableID:13:127",
-          "com.figma.scopes": [
-            "FONT_SIZE"
-          ]
+          "com.figma.scopes": ["FONT_SIZE"]
         }
       },
       "200": {
@@ -18,9 +16,7 @@
         "$description": "Base text size. Used for body copy and default UI text.",
         "$extensions": {
           "com.figma.variableId": "VariableID:13:128",
-          "com.figma.scopes": [
-            "FONT_SIZE"
-          ]
+          "com.figma.scopes": ["FONT_SIZE"]
         }
       },
       "300": {
@@ -29,9 +25,7 @@
         "$description": "Medium text size. Used for subheadings and prominent labels.",
         "$extensions": {
           "com.figma.variableId": "VariableID:13:129",
-          "com.figma.scopes": [
-            "FONT_SIZE"
-          ]
+          "com.figma.scopes": ["FONT_SIZE"]
         }
       },
       "400": {
@@ -40,9 +34,7 @@
         "$description": "Large text size. Used for section headings.",
         "$extensions": {
           "com.figma.variableId": "VariableID:13:130",
-          "com.figma.scopes": [
-            "FONT_SIZE"
-          ]
+          "com.figma.scopes": ["FONT_SIZE"]
         }
       },
       "500": {
@@ -51,9 +43,7 @@
         "$description": "Extra large text size. Used for page-level headings.",
         "$extensions": {
           "com.figma.variableId": "VariableID:13:131",
-          "com.figma.scopes": [
-            "FONT_SIZE"
-          ]
+          "com.figma.scopes": ["FONT_SIZE"]
         }
       }
     },
@@ -64,9 +54,7 @@
         "$description": "Regular weight. Used for body text and most UI labels.",
         "$extensions": {
           "com.figma.variableId": "VariableID:13:143",
-          "com.figma.scopes": [
-            "FONT_STYLE"
-          ]
+          "com.figma.scopes": ["FONT_STYLE"]
         }
       },
       "bold": {
@@ -75,22 +63,18 @@
         "$description": "Bold weight. Used for emphasis and headings.",
         "$extensions": {
           "com.figma.variableId": "VariableID:13:144",
-          "com.figma.scopes": [
-            "FONT_STYLE"
-          ]
+          "com.figma.scopes": ["FONT_STYLE"]
         }
       }
     },
     "family": {
       "default": {
         "$type": "string",
-        "$value": "Outfit, sans-serif",
+        "$value": "Akt, sans-serif",
         "$description": "Primary sans-serif font. Used across all UI components.",
         "$extensions": {
           "com.figma.variableId": "VariableID:13:132",
-          "com.figma.scopes": [
-            "FONT_FAMILY"
-          ],
+          "com.figma.scopes": ["FONT_FAMILY"],
           "com.figma.type": "string"
         }
       },
@@ -100,9 +84,7 @@
         "$description": "Monospace font. Used for code snippets and technical content.",
         "$extensions": {
           "com.figma.variableId": "VariableID:114:4250",
-          "com.figma.scopes": [
-            "FONT_FAMILY"
-          ],
+          "com.figma.scopes": ["FONT_FAMILY"],
           "com.figma.type": "string"
         }
       }
