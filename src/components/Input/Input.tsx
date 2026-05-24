@@ -40,7 +40,11 @@ export function Input({
         {label}
       </label>
       <input id={name} name={name} className={styles.field} {...props} />
-      {error && <Alert variant="error">{error}</Alert>}
+      {error && (
+        <Alert inline variant="error">
+          {error}
+        </Alert>
+      )}
     </div>
   );
 }
