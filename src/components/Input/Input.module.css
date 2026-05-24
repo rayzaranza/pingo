@@ -6,8 +6,8 @@
 
 .field {
   all: unset;
-  background-color: var(--color-background);
-  border: 1px solid var(--color-border);
+  background-color: var(--color-background-default);
+  border: 1px solid var(--color-border-default);
   border-radius: var(--radius-max);
   padding-block: var(--space-200);
   padding-inline: var(--space-300);
