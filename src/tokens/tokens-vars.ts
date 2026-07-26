@@ -1,7 +1,7 @@
 export const color = {
-  "white": "var(--color-white)",
-  "black": "var(--color-black)",
-  "blue": {
+  white: "var(--color-white)",
+  black: "var(--color-black)",
+  blue: {
     "100": "var(--color-blue-100)",
     "200": "var(--color-blue-200)",
     "300": "var(--color-blue-300)",
@@ -10,9 +10,9 @@ export const color = {
     "600": "var(--color-blue-600)",
     "700": "var(--color-blue-700)",
     "800": "var(--color-blue-800)",
-    "900": "var(--color-blue-900)"
+    "900": "var(--color-blue-900)",
   },
-  "neutral": {
+  neutral: {
     "100": "var(--color-neutral-100)",
     "200": "var(--color-neutral-200)",
     "300": "var(--color-neutral-300)",
@@ -21,9 +21,9 @@ export const color = {
     "600": "var(--color-neutral-600)",
     "700": "var(--color-neutral-700)",
     "800": "var(--color-neutral-800)",
-    "900": "var(--color-neutral-900)"
+    "900": "var(--color-neutral-900)",
   },
-  "red": {
+  red: {
     "100": "var(--color-red-100)",
     "200": "var(--color-red-200)",
     "300": "var(--color-red-300)",
@@ -32,9 +32,9 @@ export const color = {
     "600": "var(--color-red-600)",
     "700": "var(--color-red-700)",
     "800": "var(--color-red-800)",
-    "900": "var(--color-red-900)"
+    "900": "var(--color-red-900)",
   },
-  "green": {
+  green: {
     "100": "var(--color-green-100)",
     "200": "var(--color-green-200)",
     "300": "var(--color-green-300)",
@@ -43,9 +43,9 @@ export const color = {
     "600": "var(--color-green-600)",
     "700": "var(--color-green-700)",
     "800": "var(--color-green-800)",
-    "900": "var(--color-green-900)"
+    "900": "var(--color-green-900)",
   },
-  "yellow": {
+  yellow: {
     "100": "var(--color-yellow-100)",
     "200": "var(--color-yellow-200)",
     "300": "var(--color-yellow-300)",
@@ -54,72 +54,72 @@ export const color = {
     "600": "var(--color-yellow-600)",
     "700": "var(--color-yellow-700)",
     "800": "var(--color-yellow-800)",
-    "900": "var(--color-yellow-900)"
+    "900": "var(--color-yellow-900)",
   },
-  "background": {
-    "default": "var(--color-background-default)",
-    "dangerMuted": "var(--color-background-danger-muted)",
-    "successMuted": "var(--color-background-success-muted)",
-    "warningMuted": "var(--color-background-warning-muted)",
-    "infoMuted": "var(--color-background-info-muted)",
-    "hover": "var(--color-background-hover)",
-    "pressed": "var(--color-background-pressed)",
-    "active": "var(--color-background-active)",
-    "disabled": "var(--color-background-disabled)",
-    "accent": {
-      "default": "var(--color-background-accent-default)",
-      "hover": "var(--color-background-accent-hover)",
-      "pressed": "var(--color-background-accent-pressed)",
-      "disabled": "var(--color-background-accent-disabled)"
+  background: {
+    default: "var(--color-background-default)",
+    dangerMuted: "var(--color-background-danger-muted)",
+    successMuted: "var(--color-background-success-muted)",
+    warningMuted: "var(--color-background-warning-muted)",
+    infoMuted: "var(--color-background-info-muted)",
+    hover: "var(--color-background-hover)",
+    pressed: "var(--color-background-pressed)",
+    active: "var(--color-background-active)",
+    disabled: "var(--color-background-disabled)",
+    accent: {
+      default: "var(--color-background-accent-default)",
+      hover: "var(--color-background-accent-hover)",
+      pressed: "var(--color-background-accent-pressed)",
+      disabled: "var(--color-background-accent-disabled)",
     },
-    "danger": {
-      "default": "var(--color-background-danger-default)",
-      "hover": "var(--color-background-danger-hover)",
-      "pressed": "var(--color-background-danger-pressed)",
-      "disabled": "var(--color-background-danger-disabled)"
-    }
+    danger: {
+      default: "var(--color-background-danger-default)",
+      hover: "var(--color-background-danger-hover)",
+      pressed: "var(--color-background-danger-pressed)",
+      disabled: "var(--color-background-danger-disabled)",
+    },
   },
-  "border": {
-    "default": "var(--color-border-default)",
-    "secondary": "var(--color-border-secondary)",
-    "accent": "var(--color-border-accent)",
-    "danger": "var(--color-border-danger)",
-    "onDangerMuted": "var(--color-border-on-danger-muted)",
-    "onSuccessMuted": "var(--color-border-on-success-muted)",
-    "onWarningMuted": "var(--color-border-on-warning-muted)",
-    "onInfoMuted": "var(--color-border-on-info-muted)",
-    "onActive": "var(--color-border-on-active)",
-    "disabled": "var(--color-border-disabled)"
+  border: {
+    default: "var(--color-border-default)",
+    secondary: "var(--color-border-secondary)",
+    accent: "var(--color-border-accent)",
+    danger: "var(--color-border-danger)",
+    onDangerMuted: "var(--color-border-on-danger-muted)",
+    onSuccessMuted: "var(--color-border-on-success-muted)",
+    onWarningMuted: "var(--color-border-on-warning-muted)",
+    onInfoMuted: "var(--color-border-on-info-muted)",
+    onActive: "var(--color-border-on-active)",
+    disabled: "var(--color-border-disabled)",
   },
-  "content": {
-    "default": "var(--color-content-default)",
-    "secondary": "var(--color-content-secondary)",
-    "accent": "var(--color-content-accent)",
-    "danger": "var(--color-content-danger)",
-    "warning": "var(--color-content-warning)",
-    "success": "var(--color-content-success)",
-    "onAccent": "var(--color-content-on-accent)",
-    "onDanger": "var(--color-content-on-danger)",
-    "onDangerMuted": "var(--color-content-on-danger-muted)",
-    "onSuccessMuted": "var(--color-content-on-success-muted)",
-    "onWarningMuted": "var(--color-content-on-warning-muted)",
-    "onInfoMuted": "var(--color-content-on-info-muted)",
-    "onActive": "var(--color-content-on-active)",
-    "disabled": "var(--color-content-disabled)"
-  }
+  content: {
+    default: "var(--color-content-default)",
+    secondary: "var(--color-content-secondary)",
+    accent: "var(--color-content-accent)",
+    danger: "var(--color-content-danger)",
+    warning: "var(--color-content-warning)",
+    success: "var(--color-content-success)",
+    onAccent: "var(--color-content-on-accent)",
+    onDanger: "var(--color-content-on-danger)",
+    onDangerMuted: "var(--color-content-on-danger-muted)",
+    onSuccessMuted: "var(--color-content-on-success-muted)",
+    onWarningMuted: "var(--color-content-on-warning-muted)",
+    onInfoMuted: "var(--color-content-on-info-muted)",
+    onActive: "var(--color-content-on-active)",
+    disabled: "var(--color-content-disabled)",
+  },
 };
 
 export const radius = {
-  "small": "var(--radius-small)",
-  "medium": "var(--radius-medium)",
-  "large": "var(--radius-large)",
-  "max": "var(--radius-max)"
+  small: "var(--radius-small)",
+  medium: "var(--radius-medium)",
+  large: "var(--radius-large)",
+  max: "var(--radius-max)",
 };
 
 export const size = {
-  "small": "var(--size-small)",
-  "medium": "var(--size-medium)",
-  "large": "var(--size-large)"
+  small: "var(--size-small)",
+  medium: "var(--size-medium)",
+  large: "var(--size-large)",
 };
 
 export const space = {
@@ -131,24 +131,23 @@ export const space = {
   "600": "var(--space-600)",
   "700": "var(--space-700)",
   "800": "var(--space-800)",
-  "900": "var(--space-900)"
+  "900": "var(--space-900)",
 };
 
 export const font = {
-  "size": {
+  size: {
     "100": "var(--font-size-100)",
     "200": "var(--font-size-200)",
     "300": "var(--font-size-300)",
     "400": "var(--font-size-400)",
-    "500": "var(--font-size-500)"
+    "500": "var(--font-size-500)",
   },
-  "weight": {
-    "regular": "var(--font-weight-regular)",
-    "bold": "var(--font-weight-bold)"
+  weight: {
+    regular: "var(--font-weight-regular)",
+    bold: "var(--font-weight-bold)",
   },
-  "family": {
-    "default": "var(--font-family-default)",
-    "code": "var(--font-family-code)"
-  }
+  family: {
+    default: "var(--font-family-default)",
+    code: "var(--font-family-code)",
+  },
 };
-

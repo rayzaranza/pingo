@@ -5,13 +5,13 @@
 // Run: npx tsx scripts/generate-icons.ts
 
 import {
-  readFileSync,
-  writeFileSync,
-  readdirSync,
   mkdirSync,
+  readdirSync,
+  readFileSync,
   rmSync,
+  writeFileSync,
 } from "node:fs";
-import { resolve, dirname, basename } from "node:path";
+import { basename, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { optimize } from "svgo";
 

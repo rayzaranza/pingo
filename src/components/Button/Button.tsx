@@ -1,6 +1,6 @@
+import classNames from "classnames/bind";
 import type { ComponentPropsWithRef, ReactNode } from "react";
 import styles from "./Button.module.css";
-import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 

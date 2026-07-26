@@ -1,7 +1,7 @@
-import type { ReactNode } from "react";
-import styles from "./Text.module.css";
 import classNames from "classnames/bind";
+import type { ReactNode } from "react";
 import { color as colorTokens } from "@/tokens/tokens-vars";
+import styles from "./Text.module.css";
 
 const cx = classNames.bind(styles);
 

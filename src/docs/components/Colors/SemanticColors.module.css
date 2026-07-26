@@ -1,17 +1,17 @@
 .table {
   width: 100%;
   text-align: left;
-  margin-bottom: var(--space-700) !important;
+  margin-bottom: var(--space-700);
 
   thead tr {
-    border: none !important;
+    border: none;
   }
 
   th,
   td {
-    border: none !important;
-    background-color: transparent !important;
-    padding-left: 0 !important;
+    border: none;
+    background-color: transparent;
+    padding-left: 0;
   }
 }
 
@@ -23,7 +23,7 @@
 }
 
 .row {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
 .rowHeader {

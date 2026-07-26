@@ -1,7 +1,7 @@
-import { readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import type { FigmaTokenObject } from "./figma-types";
 import { unflatten } from "flat";
+import type { FigmaTokenObject } from "./figma-types";
 
 const baseDir = import.meta.dirname;
 

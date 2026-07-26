@@ -1,7 +1,7 @@
 .table {
   width: 100%;
   border-radius: var(--radius-medium);
-  margin-bottom: var(--space-900) !important;
+  margin-bottom: var(--space-900);
 
   th {
     max-width: 20px;
@@ -14,9 +14,9 @@
   th,
   td,
   tr {
-    border: none !important;
-    padding-left: 0 !important;
-    background: transparent !important;
+    border: none;
+    padding-left: 0;
+    background: transparent;
     text-align: right;
   }
 }
