@@ -19,7 +19,8 @@
     "generate-icons": "tsx scripts/generate-icons.ts",
     "dev": "pnpm generate-tokens & storybook dev -p 6006 --no-open --disable-telemetry",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "check": "biome check",
+    "check:fix": "biome check --write",
     "build-storybook": "storybook build"
   },
   "dependencies": {
@@ -28,8 +29,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
-    "classnames": "^2.5.1",
-    "@eslint/js": "^10.0.1",
+    "@biomejs/biome": "2.5.5",
     "@microsoft/api-extractor": "^7.58.7",
     "@rolldown/plugin-babel": "^0.2.3",
     "@storybook/addon-a11y": "^10.4.1",
@@ -45,10 +45,7 @@
     "@vitest/browser-playwright": "^4.1.5",
     "@vitest/coverage-v8": "^4.1.5",
     "babel-plugin-react-compiler": "^1.0.0",
-    "eslint": "^10.2.1",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "eslint-plugin-storybook": "^10.4.1",
+    "classnames": "^2.5.1",
     "flat": "^6.0.1",
     "globals": "^17.5.0",
     "playwright": "^1.59.1",
@@ -56,7 +53,6 @@
     "svgo": "^4.0.1",
     "tsx": "^4.22.3",
     "typescript": "~6.0.2",
-    "typescript-eslint": "^8.58.2",
     "unplugin-dts": "^1.0.0",
     "vite": "^8.0.10",
     "vitest": "^4.1.5"
