@@ -1,4 +1,7 @@
 {
   "js/ts.tsdk.path": "node_modules/typescript/lib",
-  "editor.defaultFormatter": "biomejs.biome"
+  "editor.defaultFormatter": "biomejs.biome",
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  }
 }
