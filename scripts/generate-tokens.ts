@@ -15,6 +15,11 @@ function isAlias(value: string) {
   return value.startsWith("{") && value.endsWith("}");
 }
 
+interface Theme {
+  base: Token[];
+  dark: Token[];
+}
+
 function formatValueUnit(token: FigmaTokenObject) {
   for (const scope of token.$extensions["com.figma.scopes"]) {
     switch (scope) {
@@ -70,9 +75,9 @@ function formatCssVariableAlias(value: string) {
   return `var(--${value.replace("{", "").replace("}", "").replaceAll(".", "-")})`;
 }
 
-function generateCss(filePath: string, tokens: Token[]) {
+function generateCss(filePath: string, tokens: Theme) {
   let css = ":root {\n";
-  for (const token of tokens) {
+  for (const token of tokens.base) {
     const name = token.name.replaceAll(".", "-");
     const value = isAlias(token.value)
       ? formatCssVariableAlias(token.value)
@@ -80,6 +85,17 @@ function generateCss(filePath: string, tokens: Token[]) {
     css += `  --${name}: ${value};\n`;
   }
   css += "}\n";
+
+  css += `:root[data-mode="dark"] {\n`;
+  for (const token of tokens.dark) {
+    const name = token.name.replaceAll(".", "-");
+    const value = isAlias(token.value)
+      ? formatCssVariableAlias(token.value)
+      : token.value;
+    css += `  --${name}: ${value};\n`;
+  }
+  css += "}\n";
+
   writeFileSync(path.join(baseDir, "../src/styles", filePath), css);
   console.info(`✅ ${filePath} generated.`);
 }
@@ -106,11 +122,11 @@ function convertKebabToCamelCase(value: string) {
 
 function generateJs(
   filePath: string,
-  tokens: Token[],
+  tokens: Theme,
   output?: "docs" | "cssVars" | "resolved",
 ) {
   const tokensObject = Object.fromEntries(
-    tokens.map(({ name, value, description }) => {
+    tokens.base.map(({ name, value, description }) => {
       const formattedName = name.includes("-")
         ? convertKebabToCamelCase(name)
         : name;
@@ -128,7 +144,7 @@ function generateJs(
         case "cssVars":
           return [formattedName, formatCssVariableAlias(name)];
         case "resolved":
-          return [formattedName, resolveValue(value, tokens)];
+          return [formattedName, resolveValue(value, tokens.base)];
         default:
           return [formattedName, value];
       }
@@ -151,16 +167,24 @@ function generateJs(
   console.info(`✅ ${filePath} generated.`);
 }
 
-function getTokensFromFolder(dir: string) {
+function getTokensFromFolder(dir: string): Theme {
   const fileNames = readdirSync(dir).filter(
     (file) => path.extname(file) === ".json",
   );
-  const allTokens = [];
+
+  const base: Token[] = [];
+  const dark: Token[] = [];
+
   for (const fileName of fileNames) {
     const tokens = getTokensFromFile(path.join(dir, fileName));
-    allTokens.push(...tokens);
+    if (fileName.includes("dark")) {
+      dark.push(...tokens);
+    } else {
+      base.push(...tokens);
+    }
   }
-  return allTokens;
+
+  return { base, dark };
 }
 
 function generateFiles() {

@@ -15,9 +15,9 @@
     "./styles.css": "./dist/pingo.css"
   },
   "scripts": {
-    "dev": "storybook dev -p 6006  --no-open --disable-telemetry",
-    "generate-tokens": "tsx watch --include './src/styles/tokens/*' ./scripts/generate-tokens.ts",
+    "generate-tokens": "tsx watch --include './tokens/**/*.json' ./scripts/generate-tokens.ts",
     "generate-icons": "tsx scripts/generate-icons.ts",
+    "dev": "pnpm generate-tokens & storybook dev -p 6006 --no-open --disable-telemetry",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "build-storybook": "storybook build"
