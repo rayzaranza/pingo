@@ -11,6 +11,12 @@
   border-style: solid;
 }
 
+.inline {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
 .warning {
   color: var(--color-content-on-warning-muted);
   background-color: var(--color-background-warning-muted);
@@ -45,10 +51,4 @@
   color: var(--color-content-on-info-muted);
   background-color: var(--color-background-info-muted);
   border-color: var(--color-border-on-info-muted);
-}
-
-.inline {
-  background: none;
-  border: none;
-  padding: 0;
 }

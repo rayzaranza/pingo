@@ -3,9 +3,9 @@
 // This plugin runs after the bundle is written, pulls font data URIs out of the
 // CSS, writes them as real files, and rewrites the CSS references.
 
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
-import { resolve } from "node:path";
 import { createHash } from "node:crypto";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { resolve } from "node:path";
 import type { Plugin, ResolvedConfig } from "vite";
 
 const FONT_DATA_URI = /url\("?(data:font\/[\w+]+;base64,[A-Za-z0-9+/=]+)"?\)/g;

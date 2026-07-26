@@ -1,5 +1,5 @@
 import { create } from "storybook/theming";
-import { font, color } from "../src/tokens/tokens-resolved.ts";
+import { color, font } from "../src/tokens/tokens-resolved.ts";
 import logo from "./public/logo.svg";
 
 export default create({

@@ -1,6 +1,6 @@
-import styles from "./PrimitiveColors.module.css";
-import { color } from "@/tokens/tokens-docs";
 import { Text } from "@/components/Text/Text";
+import { color } from "@/tokens/tokens-docs";
+import styles from "./PrimitiveColors.module.css";
 
 type PrimitiveColor = typeof color.neutral;
 type ColorScale = keyof PrimitiveColor;

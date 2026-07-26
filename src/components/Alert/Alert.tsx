@@ -1,8 +1,8 @@
-import styles from "./Alert.module.css";
-import type { ReactNode } from "react";
 import classNames from "classnames";
+import type { ReactNode } from "react";
 import { Icon } from "@/components/Icon/Icon";
 import type { IconName } from "@/components/Icon/icons";
+import styles from "./Alert.module.css";
 
 const cx = classNames.bind(styles);
 

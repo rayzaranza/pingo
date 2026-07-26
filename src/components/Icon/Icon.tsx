@@ -1,6 +1,6 @@
 import type { SVGAttributes } from "react";
-import { icons, type IconName } from "./icons";
 import styles from "./Icon.module.css";
+import { type IconName, icons } from "./icons";
 
 interface IconProps extends SVGAttributes<SVGElement> {
   /** Name of the icon */
@@ -29,6 +29,7 @@ export function Icon({
       viewBox="0 0 24 24"
       stroke={color}
       className={styles.icon}
+      role="presentation"
       {...(label
         ? { role: "img", "aria-label": label }
         : { "aria-hidden": true })}

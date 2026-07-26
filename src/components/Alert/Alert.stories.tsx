@@ -3,7 +3,8 @@ import { Alert } from "./Alert";
 
 const meta = preview.meta({ component: Alert });
 
-export const Error = meta.story({
+export const ErrorVariant = meta.story({
+  name: "Error",
   args: {
     children: "Email is required",
     variant: "error",

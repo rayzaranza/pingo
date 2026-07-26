@@ -1,11 +1,12 @@
 /// <reference types="vitest/config" />
-import { defineConfig } from "vite";
-import react, { reactCompilerPreset } from "@vitejs/plugin-react";
+
+import { resolve } from "node:path";
 import babel from "@rolldown/plugin-babel";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
+import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import { playwright } from "@vitest/browser-playwright";
-import { resolve } from "node:path";
 import dts from "unplugin-dts/vite";
+import { defineConfig } from "vite";
 import { extractFonts } from "./plugins/extractFonts";
 
 export default defineConfig({

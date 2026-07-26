@@ -1,6 +1,6 @@
-import styles from "./SemanticColors.module.css";
-import { color } from "@/tokens/tokens-docs";
 import { Text } from "@/components/Text/Text";
+import { color } from "@/tokens/tokens-docs";
+import styles from "./SemanticColors.module.css";
 
 interface SemanticToken {
   name: string;
