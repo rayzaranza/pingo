@@ -1,25 +1,2 @@
 @import "./tokens.css";
 @import "./fonts.css";
-
-body {
-  margin: 0;
-  padding: 0;
-  color: var(--color-content-default);
-  background-color: var(--color-background-default);
-  font-family: var(--font-family-default);
-  font-size: var(--font-size-200);
-  font-weight: var(--font-weight-regular);
-}
-
-button,
-[href],
-input,
-select,
-textarea,
-[tabindex],
-[contenteditable] {
-  &:focus-visible {
-    outline: 3px solid var(--color-border-accent);
-    outline-offset: 2px;
-  }
-}
