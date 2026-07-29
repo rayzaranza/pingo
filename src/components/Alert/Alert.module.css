@@ -9,6 +9,7 @@
   padding-inline-end: var(--space-300);
   border-width: 1px;
   border-style: solid;
+  font-family: var(--font-family-default);
 }
 
 .inline {

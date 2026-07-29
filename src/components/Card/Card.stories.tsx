@@ -6,7 +6,7 @@ const meta = preview.meta({
   args: {
     title: "Card title",
     image: "https://placecats.com/400/400",
-    imageAlt: "heree kitteeen pspspsps",
+    imageAlt: "Example image alt text",
   },
 });
 

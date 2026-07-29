@@ -13,7 +13,7 @@ export const ErrorVariant = meta.story({
 
 export const Success = meta.story({
   args: {
-    children: "This is email is available",
+    children: "This email is available",
     variant: "success",
   },
 });
@@ -27,7 +27,7 @@ export const Warning = meta.story({
 
 export const Info = meta.story({
   args: {
-    children: "Asset list were moved to your profile",
+    children: "Asset list was moved to your profile",
     variant: "info",
   },
 });
